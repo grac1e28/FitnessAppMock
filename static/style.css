@@ -1,28 +1,123 @@
-
-.header {
-    background-color: blue;
-    padding: 1rem;
-    /*display: flex;*/
-    /*justify-content: flex-end;*/
+:root {
+  --brand-color: #9381ff;
+  --brand-font: Arial, Helvetica, sans-serif;
 }
 
-/*full header*/
-.header nav {
+* { box-sizing: border-box; }
+
+.container {
+    max-width: 1100px;   /* tweak this to match your design */
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-/*text feilds*/
-.header nav a {
-    color: white;
-    font-weight: 500;
-    font-size: 1.2rem
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--brand-font);
 }
 
 /*search bar*/
 .search-bar input {
     width: 250px;
     padding: 10px;
-    border: 2px solid black
-    border-radius: 8px
+    border: 2px solid black;
+    border-radius: 8px;
     font-size: 16px;
+}
+
+/* nav link layout */
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/*text fields*/
+.header nav a {
+    color: white;       /* text color */
+    padding: 0.5rem 1rem;        /* space inside */
+    border-radius: 6px;     /* rounded corners */
+    text-decoration: none;     /* remove underline */
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.header {
+    background-color: #9381ff;
+    padding: 1rem;
+    display: flex;       /* make nav + search bar flex items */
+    justify-content: space-between; /* push nav left, search bar right */
+    align-items: center;          /* vertically center them */
+}
+
+
+.header nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.background-photo {
+    background-image: url(../static/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 100px); /* full viewport height minus header */
+    display: flex;               /* this ensures text can center easily */
+    flex-direction: column;      /* keeps content stacked */
+    justify-content: center;     /* centers vertically */
+    align-items: center;         /* centers horizontally */
+}
+
+
+.title {
+    font-size: 3rem;
+    font-family: var(--brand-font, Arial, Helvetica, sans-serif);
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+
+.drop-down {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border: 12px blue solid;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+.drop-down select {
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #9381ff;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 70%;
+}
+
+/* Highlight effect on hover/focus */
+.drop-down select:hover {
+  border-color: #b8b8ff;
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.6);
+  outline: none;
 }
