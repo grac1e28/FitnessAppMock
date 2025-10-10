@@ -1,8 +1,8 @@
 :root {
   --brand-color: #9381ff;
+  --brand-glow-rgba: 147,129,255;
   --brand-font: Arial, Helvetica, sans-serif;
 }
-
 * { box-sizing: border-box; }
 
 .container {
@@ -92,27 +92,30 @@ body {
 }
 
 
-
 .drop-down {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    border: 12px blue solid;
-    border-radius: 20px;
+    width: 70%;
+    margin: 50px auto 0;
+    padding: 10px;
+    background: var(--brand-color);
+    border-radius: 14px;
+    display: block;
     text-align: center;
+    transition: box-shadow 0.35s ease, transform 0.12s ease;
 }
 
 
 .drop-down select {
-    font-size: 2rem;
-    padding: 10px 20px;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 12px 18px;
     border-radius: 8px;
-    border: 2px solid #9381ff;
+    border: 2px solid rgba(0,0,0,0.08);
     background-color: white;
     color: #333;
     cursor: pointer;
     transition: all 0.2s ease;
-    width: 70%;
+    outline: none;
+    appearance: none;
 }
 
 /* Highlight effect on hover/focus */
